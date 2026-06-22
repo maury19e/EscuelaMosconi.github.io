@@ -376,14 +376,17 @@ footer{
 =                 RESPONSIVE                       =
 ==================================================*/
 
+
 /* Reglas para pantallas de hasta 768px */
 @media(max-width:768px){
-   .login-container {
-    width: 100%;
-    margin-top: 20%;}
-}
+
+
     .login-card{
         margin: 5%;
+    }
+    .login-container{
+    width: 100%;
+    margin-top: 20%;
     }
     #formO h2{
     text-align: center;
