@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Permite que la página sea responsive y se adapte al tamaño de la pantalla -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+<title>Obtener información del alumno</title>
+</head>
+<body>
+
+<header>
+    <img src="img/ChatGPT Image 16 jun 2026, 00_15_38.png" alt="">    
+    <div class="perfil-menu">
+        <img src="img/person-circle_E4E4E4.svg" id="perfil" alt="Perfil">
+        <div class="menu_desplegable">
+            <a href="index.html">Inicio</a>
+            <a href="inicio_sesion.html">Cerrar sesión</a>
+        </div>
+    </div>
+</header>
+
+<div class="contenedor" >
+
+    <div class="card" id="formO">
+        <h2>Obtener información del alumno</h2>
+        <form id="formObtenerInfoA">
+
+            <label>DNI del Estudiante</label>
+            <input
+                type="text"
+                id="dni"
+                placeholder="Ingrese DNI"
+            >
+            <button type="submit">
+                Buscar alumno
+            </button>
+
+        </form>
+
+        <div id="mensaje" class="resultado"></div>
+        <div id="informe" class="card" style="display:none; margin-top:20px;">
+        </div>
+    </div>
+
+</div>
+<script src="scripts.js"></script>
+<footer>
+
+    <div class="footer-logo">
+
+        <img src="img/ChatGPT Image 16 jun 2026, 00_15_38.png" alt="Logo Colegio">
+        <h4>ESCUELA MOSCONI</h4>
+    </div>
+
+    <div class="footer-direccion">
+
+        <h4>Dirección</h4>
+
+        <p>Domicilio legal: San Justo 345 Este</p>
+        <p>San Juan - Argentina - CPA: K4302H</p>
+
+    </div>
+
+    <div class="footer-contacto">
+
+        <h4>Contacto</h4>
+
+        <a href="#">
+            <img src="img/whatsapp.png" alt="WhatsApp">
+        </a>
+
+        <a href="#">
+            <img src="img/gmail.png" alt="Correo">
+        </a>
+
+        <a href="#">
+            <img src="img/linkedin.png" alt="LinkedIn">
+        </a>
+            <a href="#">
+            <img src="img/instagram.png" alt="instagram">
+        </a>
+
+    </div>
+
+</footer>
+</body>
+</html>
