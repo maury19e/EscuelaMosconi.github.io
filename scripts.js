@@ -1,36 +1,26 @@
 /*LOGIN*/
 
-// Obtenemos el formulario de inicio de sesión.
-const login = document.getElementById("login");
 
-if (login) {
+function verificar_login(e) {
+    e.preventDefault();
+    const usuario = document.getElementById("usuario").value;
+    const clave = document.getElementById("clave").value;
 
-    // Si el usuario envía el formulario, validamos los datos.
-    login.addEventListener("submit", function (e) {
+    if (usuario == "admin" && clave == "1234") {
+        window.location.href = "index.html";
 
-        e.preventDefault(); // Evita que la página se recargue.
-
-        const usuario = document.getElementById("usuario").value;
-        const clave = document.getElementById("clave").value;
-
-        // Validación : usuario y clave.
-        if (usuario == "admin" && clave == "1234") {
-            // Usuario preceptor
-            window.location.href = "index.html";
-        } else if (usuario == "padre1" && clave == "1234") {
-            // Usuario padres.
-            window.location.href = "obtener_info_hijo.html";
-        } else {
-            document.getElementById("error").style.display = "block";
-        }
-
-    });
-
+    } else if (usuario == "padre1" && clave == "1234") {
+        window.location.href = "obtener_info_hijo.html";
+    } else {
+        document.getElementById("error").style.display = "block";
+    }
 }
 
+const login = document.getElementById("login");
+if (login) {
+    login.addEventListener("submit", verificar_login);
+}
 /*MENÚ PERFIL*/
-
-// Elementos del menú desplegable de perfil.
 const perfil = document.getElementById("perfil");
 const menu = document.querySelector(".menu_desplegable");
 
@@ -128,7 +118,6 @@ if (formulario) {
     });
 
 }
-/*BASE DE DATOS SIMULADA =*/
 
 const alumnos = [
 

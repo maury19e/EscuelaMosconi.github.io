@@ -1,82 +1,63 @@
-/*==================================================
-=            ESTILOS GENERALES DEL SITIO           =
-==================================================*/
-
-/* Selector universal:
-   Se aplica a todos los elementos de la página */
+/* Selector universal*/
 *{
-    margin:0;                     /* Elimina márgenes por defecto */
-    padding:0;                    /* Elimina rellenos por defecto */
-    box-sizing:border-box;        /* Incluye border y padding en el tamaño */
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente base */
+    margin:0;
+    padding:0;
+    box-sizing:border-box;/* El ancho y alto incluyen padding + border. Más predecible para el diseño */
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-/* Estilo general para párrafos: color y tipografía serif */
 p{
     color:black;
     font-family:Georgia,'Times New Roman',Times,serif;
 }
-
-/* Fondo y tamaño base para todo el body */
 body{
     font-size:16px;
     background:#dfdfdf;
 }
 
 
-/*==================================================
-=                    LOGIN                         =
-==================================================*/
-
-/* Fondo de la pantalla de inicio de sesión */
+/*login*/
 #fondo_inicial{
     min-height:100vh; /* Ocupa toda la altura de la pantalla */
-    background:linear-gradient(135deg,#181A85,#3483FA,#DFDFDF); /* Degradado de fondo */
+    background:linear-gradient(135deg,#181A85,#3483FA,#DFDFDF); 
 }
 
-/* Contenedor del formulario del login centrado */
-.login-container{
+.login-contenedor{
     width:100%;
     margin-top:3%;
     display:flex;
     justify-content:center;
-    align-items:center;
 }
 
-/* Tarjeta del login: caja blanca con sombra y bordes redondeados */
-.login-card{
+.login-tarjeta{
     width:400px;
-    background:white;
+    background-color:white;
     padding:35px;
     border-radius:12px;
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
+    box-shadow:0 5px 15px rgba(0,0,0,.2);/*sombra*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Imagen del logo dentro del login */
-.login-card img{
+
+.login-tarjeta img{
     width:120px;
-    display:block;
-    margin:0 auto 20px;
+    margin-bottom: 20px;
 }
 
-/* Título principal del formulario */
-.login-card h2{
+.login-tarjeta h2{
     text-align:center;
     color:#181A85;
     margin-bottom:25px;
 }
-
-/* Color del botón dentro del login */
-.login-card button{
+.login-tarjeta button{
     background:#181A85;
 }
 
-/* Hover del botón del login */
-.login-card button:hover{
+.login-tarjeta button:hover{
     background:#11136b;
 }
 
-/* Mensaje de error oculto hasta que se muestra */
 .error{
     display:none;
     color:red;
@@ -85,43 +66,34 @@ body{
 }
 
 
-/*==================================================
-=                    HEADER                        =
-==================================================*/
+/*header*/
 
 header{
-    background:#181A85; /* Color de fondo del encabezado */
-    display:flex; /* Layout horizontal */
-    align-items:center; /* Centra verticalmente el contenido */
-    padding:0;
+    background-color:#181A85;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
 
-/* Imagen del logo en el header */
+
 header img{
     width:82px;
     height:82px;
 }
 
 
-/*==================================================
-=                MENÚ DEL PERFIL                   =
-==================================================*/
+/*menu del perfil*/
 
-/* Contenedor del icono del perfil, con espacio a la derecha */
+
 .perfil-menu{
-    margin-left:auto;
-    position:relative; /* Para posicionar el menú absoluto relativo a este contenedor */
     padding-right:20px;
 }
 
-/* Icono del perfil con tamaño fijo */
 #perfil{
     width:54px;
     height:54px;
     cursor:pointer;
 }
-
-/* Estilo del menú desplegable de perfil */
 .menu_desplegable{
     position:absolute;
     top:60px;
@@ -130,169 +102,130 @@ header img{
     background:white;
     border-radius:8px;
     box-shadow:0 5px 15px rgba(0,0,0,.3);
-    display:none; /* Oculto por defecto */
+    display:none;
 }
-
-/* Muestra el menú cuando el JavaScript agrega la clase */
 .menu_desplegable.mostrar{
     display:block;
 }
-
-/* Enlaces del menú de perfil */
 .menu_desplegable a{
     display:block;
     padding:12px;
     text-decoration:none;
     color:#181A85;
 }
-
-/* Hover para los enlaces del menú */
 .menu_desplegable a:hover{
     background:#3483FA;
     color:white;
 }
 
-/*==================================================
-=             PANEL DEL PRECEPTOR                  =
-==================================================*/
-
-/* Contenedor de las opciones del panel */
+/*panel del preceptor*/
 .menu{
-    margin-top:35px;
-    display:grid; /* Grid para tarjetas en dos columnas */
+    margin-top:20px;
+    display:grid; /* Grid para tarjetas en doble columna*/
     grid-template-columns:repeat(2,1fr);
     gap:25px;
 }
-
-/* Título principal del panel */
 #titulo{
     text-align:center;
     color:#181A85;
 }
 
-/* Subtítulo con espaciado */
 #subtitulo{
     text-align:center;
-    margin:15px 0 30px;
+    margin:5px;
 }
-
-/* Estilo base de cada tarjeta de opción */
 .opcion{
-    background:white;
+    background-color:white;
     border:1px solid #000005;
     border-radius:12px;
-    padding:30px;
+    padding:15px;
     text-align:center;
     text-decoration:none;
     color:#181A85;
     box-shadow:0 5px 15px rgba(0,0,0,.2);
-    transition:.3s;
+    transition:.3s;/*controla el tiempo para que el cambio no sea brusco*/
 }
-
-/* Icono dentro de cada tarjeta */
 .opcion img{
     height:64px;
 }
-
-/* Hover visual para las tarjetas */
 .opcion:hover{
     background:#3483FA;
     color:black;
     transform:scale(1.05);
 }
-
-/* Título de cada tarjeta */
 .opcion h3{
-    margin-top:15px;
+    margin-top:10px;
     font-size:18px;
 }
 
 
-/*==================================================
-=              CONTENEDORES                        =
-==================================================*/
+/*contenedores*/
 
-/* Contenedor central que limita el ancho y centra la página */
 .contenedor{
     width:90%;
     max-width:800px;
-    margin:30px auto;
+    margin:15px auto;
 }
-
-/* Tarjeta blanca que envuelve contenido con sombra */
-.card{
+.tarjeta{
     background:white;
-    padding:25px;
+    padding: 20px 25px;
     border-radius:10px;
     box-shadow:0 0 10px rgba(0,0,0,.2);
 }
 
 
-/*==================================================
-=               FORMULARIOS                        =
-==================================================*/
+/*formularios*/
 
-/* Etiquetas de los formularios: cada etiqueta en bloque */
 label{
     display:block;
     margin-top:15px;
 }
 
-/* Estilos de los campos de entrada y listas desplegables */
-input,
-select{
+input,select{
     width:100%;
     padding:10px;
     margin-top:5px;
-    border:1px solid #ccc;
+    border:1px solid #DFDFDF;
     border-radius:5px;
 }
-
-/* Botones generales del sitio */
 button{
     width:100%;
     margin-top:20px;
     padding:12px;
     border:none;
     border-radius:5px;
-    background:#27ae60;
+    background-color:#27ae60;
     color:white;
     font-size:16px;
     cursor:pointer;
 }
 
-/* Cambia el color del botón al pasar el mouse */
 button:hover{
     background:#219150;
 }
 #formO{
-    margin: 72px ;
+    margin:88px ;
 }
 .contenedor #formObtenerInfoA{
     height:150px;
-    margin-bottom: 20px;
+    margin:20px auto 20px;
 }
-#formObtenerInfoA
-label{
+#formObtenerInfoA  label{
     display:block;
     margin-top:25px;
 }
-
-/* Estilos de los campos de entrada y listas desplegables */
-#formObtenerInfoA input, select{
+#formObtenerInfoA input{
+    margin-top:25px;
+}
+#formObtenerInfoA select{
     margin-top:25px;
 }
 
-/* Botones generales del sitio */
 #formObtenerInfoA button{
     width:100%;
     margin-top:25px;
 }
-/*==================================================
-=                    RELOJ                         =
-==================================================*/
-
-/* Estilo del reloj digital que se actualiza cada segundo */
+/*reloj*/
 #reloj{
     text-align:center;
     font-size:40px;
@@ -301,87 +234,59 @@ label{
 }
 
 
-/*==================================================
-=               MENSAJES                           =
-==================================================*/
-
-/* Contenedor del mensaje de resultado; oculto hasta mostrarlo */
+/*mensaje*/
 .resultado{
     display:none;
     margin-top:20px;
     padding:15px;
     border-radius:5px;
 }
-
-/* Estilo del mensaje de éxito */
 .exito{
     background:#d4edda;
     color:#155724;
 }
 
 
-/*==================================================
-=                    FOOTER                        =
-==================================================*/
-
-/* Estilo del pie de página con layout flexible */
+/*footer*/
 footer{
     background:white;
-    display:flex; /* Distribuye los elementos en línea */
+    display:flex;
     justify-content:space-between; /* Espacio entre secciones */
-    align-items:center; /* Centra verticalmente */
-    padding:20px 40px;
+    align-items:center;
+    padding:10px 40px;
     flex-wrap:wrap; /* Permite que los elementos bajen a la siguiente línea si no caben */
 }
-
-/* Contenedor del logo y nombre de la escuela */
 .footer-logo{
     display:flex;
     align-items:center;
     gap:15px;
 }
-
-/* Imagen del logo del footer */
 .footer-logo img{
     width:70px;
     height:70px;
 }
-
-/* Nombre de la escuela en el footer */
 .footer-logo h4{
     font-size:30px;
     color:#181A85;
 }
-
-/* Secciones de dirección y contacto con texto centrado */
 .footer-direccion,
 .footer-contacto{
     text-align:center;
 }
-
-/* Iconos de contacto: tamaño fijo y animación suave */
 .footer-contacto img{
     width:40px;
     margin:5px 8px;
     transition:.3s;
 }
-
-/* Escala el icono al pasar el ratón */
 .footer-contacto img:hover{
     transform:scale(1.15);
 }
 
 
-/*==================================================
-=                 RESPONSIVE                       =
-==================================================*/
+/*responsive*/
 
-
-/* Reglas para pantallas de hasta 768px */
 @media(max-width:768px){
-
-
-    .login-card{
+    .login-tarjeta{
         margin: 5%;
     }
     .login-container{
@@ -393,19 +298,14 @@ footer{
     }
     #formO {
     margin: 20px;
-   }
-
-    /* Apila las tarjetas del menú en una sola columna */
-    .menu{
-        grid-template-columns:1fr;
     }
-    
-    /* Hace el reloj más pequeño en pantallas medianas */
+    .menu{
+        display: flex;
+        flex-direction: column;
+    }
     #reloj{
         font-size:30px;
     }
-
-    /* Hace el footer vertical y centra su contenido */
     footer{
         flex-direction:column;
         text-align:center;
@@ -417,13 +317,9 @@ footer{
         width:100%;
         margin-bottom:20px;
     }
-
-    /* Centra el contenido del logo del footer */
     .footer-logo{
         justify-content:center;
     }
-
-    /* Reduce el tamaño de los iconos de contacto */
     .footer-contacto img{
         width:36px;
         margin:8px 6px;
